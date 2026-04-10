@@ -271,6 +271,79 @@
             border-radius: 4px;
             margin-left: 8px;
         }
+        
+        /* 帮助提示框样式 */
+        .help-tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .help-tooltip .tooltip-content {
+            visibility: hidden;
+            width: 320px;
+            background-color: #fff;
+            color: #333;
+            text-align: left;
+            border-radius: 8px;
+            padding: 16px;
+            position: absolute;
+            z-index: 100;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -160px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 1px solid #e8e8e8;
+            font-size: 13px;
+            line-height: 1.6;
+            font-weight: normal;
+        }
+        
+        .help-tooltip .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #fff transparent transparent transparent;
+        }
+        
+        .help-tooltip:hover .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .tooltip-content h4 {
+            font-size: 14px;
+            color: #1890ff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .tooltip-content p {
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        .tooltip-content ul {
+            margin-left: 16px;
+            color: #666;
+        }
+        
+        .tooltip-content li {
+            margin-bottom: 4px;
+        }
+        
+        .tooltip-content .example {
+            background: #f6ffed;
+            border-left: 3px solid #52c41a;
+            padding: 8px 12px;
+            margin-top: 8px;
+            border-radius: 0 4px 4px 0;
+        }
     </style>
 </head>
 <body>
@@ -453,7 +526,31 @@
             <div class="section-title">
                 客服端排队人数设置
                 <span class="new-badge">NEW</span>
-                <span class="help-icon" title="设置客服人员的远程协助排队人数上限">?</span>
+                <span class="help-tooltip">
+                    <span class="help-icon">?</span>
+                    <span class="tooltip-content">
+                        <h4>什么是排队人数上限？</h4>
+                        <p>指同时可以有多少个远程协助会话排队等待该客服处理。</p>
+                        
+                        <h4 style="margin-top: 12px;">两种设置方式说明：</h4>
+                        <p><strong>1. 允许客服人员自行设置</strong></p>
+                        <ul>
+                            <li>每个客服人员可在个人设置中独立设置自己的排队上限</li>
+                            <li>适合管理灵活、客服自主性高的场景</li>
+                        </ul>
+                        
+                        <p><strong>2. 由管理员统一设置</strong></p>
+                        <ul>
+                            <li>所有客服人员使用相同的上限值</li>
+                            <li>客服人员个人设置中该选项将被锁定，无法修改</li>
+                            <li>适合需要统一管控、标准化服务的场景</li>
+                        </ul>
+                        
+                        <div class="example">
+                            <strong>示例：</strong>设置统一上限为 5 人，则所有客服最多同时接受 5 个远程排队，第 6 个客户需要等待。
+                        </div>
+                    </span>
+                </span>
             </div>
             
             <div class="form-item">
