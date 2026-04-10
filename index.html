@@ -532,15 +532,15 @@
                 <div class="form-label">设置方式:</div>
                 <div class="form-content">
                     <div class="radio-group">
-                        <!-- 选项1：允许自行设置 -->
+                        <!-- 选项1：允许自行设置（默认选中，兼容老客户） -->
                         <label class="radio-item">
-                            <input type="radio" name="queue-setting-mode" value="self">
+                            <input type="radio" name="queue-setting-mode" value="self" checked>
                             <span class="radio-label">允许客服人员自行设置排队人数上限</span>
                         </label>
                         
                         <!-- 选项2：管理员统一设置 -->
                         <label class="radio-item">
-                            <input type="radio" name="queue-setting-mode" value="uniform" checked>
+                            <input type="radio" name="queue-setting-mode" value="uniform">
                             <span class="radio-label">由管理员统一设置排队人数上限</span>
                         </label>
                         
@@ -556,6 +556,7 @@
                     <div class="description">
                         <strong>说明：</strong>
                         <ul>
+                            <li>默认选中"允许客服人员自行设置"，兼容老客户现有使用习惯</li>
                             <li>选择"允许客服人员自行设置"时，客服人员可在个人设置中调整排队人数上限</li>
                             <li>选择"由管理员统一设置"时，所有客服人员使用统一的上限值，且无法自行修改</li>
                             <li>切换为统一设置后，原有个人设置将被覆盖</li>
